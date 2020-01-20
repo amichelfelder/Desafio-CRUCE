@@ -1,0 +1,540 @@
+@import "_variables.scss";
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(../styles/fuentes/Montserrat-Medium.ttf);
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url(../styles/fuentes/Montserrat-Regular.ttf);
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url(../styles/fuentes/Roboto-Light.ttf);
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url(../styles/fuentes/Roboto-Regular.ttf);
+  font-weight: 400;
+  font-style: normal;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  cursor: pointer;
+}
+
+::selection {
+  color: $selection;
+}
+
+button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 72px 48px;
+  box-sizing: border-box;
+  background-color: $lightgrey;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat";
+}
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  height: 48px;
+  background-color: $black;
+  padding: 0 45px;
+  margin: 0;
+  box-sizing: border-box;
+
+  .menu {
+    background-color: $black;
+    display: flex;
+    align-items: center;
+
+    width: 30%;
+    .dropDown {
+      color: $white;
+      float: left;
+      padding-right: 15px;
+      i {
+        font-size: 15px;
+      }
+    }
+    .categories {
+      color: $white;
+      font-family: "Montserrat";
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 18px;
+      position: relative;
+      float: left;
+      display: flex;
+      align-items: baseline;
+      i {
+        position: relative;
+        float: left;
+        margin-left: 10px;
+        font-size: 12px;
+      }
+    }
+    .contact {
+      color: $white;
+      font-family: "Montserrat";
+      font-weight: 400;
+      font-size: 15px;
+      padding-left: 36px;
+    }
+    .browse {
+      color: $white;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      width: 30%;
+    }
+  }
+
+  .logo {
+    align-content: center;
+  }
+
+  .browse {
+    display: flex;
+    justify-content: flex-end;
+    width: 30%;
+    .cart {
+      display: flex;
+      align-items: center;
+      img {
+        position: relative;
+        float: left;
+      }
+      .cartNumber {
+          position: absolute;
+          border-radius: 24px;
+          width: 24px;
+          height: 24px;
+          border: 1px solid $white;
+          color: $white;
+          right: 36px;
+          top: 10px;
+          font-family: "Montserrat";
+          font-weight: 300;
+          font-size: 16px;
+          display: none;
+          background-color: transparent;
+          text-align: center;
+          &.hide{
+            display: none;
+          }
+      }
+    }
+  }
+}
+
+.bannersP {
+  width: 100%;
+  margin: 0px 0 24px 0;
+  position: relative;
+  .slide {
+    display: none;
+    width: 100%;
+  }
+  .gradient {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.25) 100%);
+    position: absolute;
+    height: 72px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    .circle {
+      border-radius: 12px;
+      width: 12px;
+      height: 12px;
+      border: 2px solid $white;
+      box-sizing: border-box;
+      margin: 24px 6px;
+      &.active {
+        background: $white;
+      }
+    }
+  }
+}
+
+.products {
+  text-align: center;
+  h1 {
+    font-family: "Montserrat";
+    font-weight: 500;
+    font-size: 36px;
+    text-align: center;
+    margin: 75px auto 60px;
+  }
+  .carrousel {
+    display: flex;
+    position: relative;
+    float: left;
+    width: 100%;
+    flex-wrap: wrap;
+
+    .carrousel-arrow {
+      border-radius: 48px;
+      background-color: $white;
+      padding: 14px 16px;
+      box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.36);
+      position: absolute;
+      z-index: 2;
+      box-sizing: border-box;
+      top: 50%;
+      transform: translateY(-50%);
+      i {
+        color: $grey;
+      }
+      &.arrow-left {
+        left: -8px;
+      }
+      &.arrow-right {
+        right: -8px;
+      }
+    }
+
+    .watches {
+      display: flex;
+      position: relative;
+      float: left;
+      justify-content: space-between;
+      flex-direction: row;
+      width: 100%;
+      .watch {
+        text-align: center;
+        box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.36);
+        padding: 12px;
+        box-sizing: border-box;
+        position: relative;
+        width: 23%;
+        img{
+          width: 100%;
+        }
+
+        .twoForOne {
+          background-color: $black;
+          color: $white;
+          position: absolute;
+          font-family: "Montserrat";
+          font-weight: 500;
+          font-size: 15px;
+          top: 0;
+          left: 0;
+          padding: 6px 9px;
+        }
+
+        p {
+          font-family: "Roboto";
+          font-weight: 300;
+          font-size: 14px;
+        }
+
+        h3 {
+          font-family: "Montserrat";
+          font-weight: 400;
+          font-size: 15px;
+        }
+
+        .price {
+          font-family: "Roboto";
+          font-weight: 400;
+          font-size: 16px;
+        }
+        button {
+          color: $white;
+          width: 100%;
+          padding: 12px 24px;
+          background: $black;
+          border-radius: 6px;
+          font-family: "Montserrat";
+          font-size: 15px;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+  .viewAll {
+    margin: 60px auto;
+    border-style: solid;
+    border-color: $black;
+    border-radius: 6px;
+    width: 272px;
+    height: 54px;
+    font-size: 18px;
+    font-family: "Montserrat";
+    font-weight: 500;
+  }
+}
+
+.bannerContainerS {
+  width: calc(100% + 24px);
+  margin-left: -12px;
+
+  .bannersS {
+    margin: 0 12px;
+    width: calc(50% - 24px);
+    position: relative;
+    float: left;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+footer {
+  @include relative(left);
+  margin: 0 0 30px 0;
+  .infoContainer {
+    box-sizing: border-box;
+    border-top-style: solid;
+    border-top-color: $grey;
+    border-top-width: 1px;
+    background-color: $background;
+    display: flex;
+    justify-content: center;
+    margin: 72px 0 30px 0;
+
+    .info {
+      margin: 0 24px;
+      width: 180px;
+      h3 {
+        font-family: "Montserrat";
+        font-weight: 400;
+        font-size: 15px;
+        // text-align: left;
+        color: $black;
+        line-height: 18px;
+        width: 100%;
+        // float: left;
+        margin: 36px 0 18px 0px;
+      }
+      hr {
+        border: 1px solid $hr;
+        width: 24px;
+        // float: left;
+        margin: 0 0 12px 0;
+      }
+      ul {
+        font-family: "Roboto";
+        font-weight: 300;
+        font-size: 14px;
+        text-align: left;
+        color: $grey;
+        line-height: 18px;
+        width: 100%;
+        float: left;
+        margin-bottom: 42px;
+
+        li {
+          @include relative(left);
+          a {
+            @include relative(left);
+            margin: 0 0 6px 0;
+            text-decoration: none;
+            color: $grey;
+          }
+        }
+      }
+    }
+  }
+
+  .legal {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 48px;
+
+    .copyright {
+      display: flex;
+
+      .brandPage {
+        display: flex;
+        text-decoration: none;
+        color: $black;
+        font-family: "Montserrat";
+        font-weight: 400;
+        font-size: 15px;
+        border-right: 1px solid $grey;
+        padding-right: 18px;
+      }
+      .rights {
+        margin: 0;
+        font-family: "Roboto";
+        font-size: 16px;
+        font-weight: 400;
+        color: $grey;
+        margin-left: 18px;
+      }
+    }
+
+    .footerLogos {
+      display: flex;
+      .socialMedia {
+        display: flex;
+    align-items: center;
+    /* text-decoration: none; */
+    /* color: #000000; */
+    /* font-family: "Montserrat"; */
+    /* font-weight: 400; */
+    /* font-size: 15px; */
+    /* line-height: 18px; */
+    /* text-align: left; */
+    /* margin: 0; */
+    margin-right: 18px;
+    border-right: 1px solid #DDDDDD;
+    padding-right: 18px;
+        a {
+          position: relative;
+          float: left;
+          padding: 0 9px;
+          img {
+            position: relative;
+            float: left;
+          }
+        }
+      }
+      .company {
+        display: flex;
+        align-items: center;
+        margin: 0;
+        font-family: "Roboto";
+        font-size: 16px;
+        font-weight: 400;
+        color: $grey;
+      }
+    }
+  }
+}
+
+.cartContent {
+  display: none;
+  position: fixed;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 12px 24px 18px;
+  box-sizing: border-box;
+  width: 414px;
+  max-height: 480px;
+  z-index: 4;
+  top: 50px;
+  right: 48px;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.36);
+  padding: 12px 24px 18px;
+  flex-direction: column;
+  background-color: $white;
+  overflow: auto;
+  &.closeCart {
+    display: none;
+  }
+
+  .items {
+    .cartItem {
+      border-bottom: 1px solid $border;
+      display: flex;
+
+      img {
+        margin: 12px 12px 12px 0;
+        height: 72px;
+      }
+
+      .cartText {
+        flex: 1;
+        padding: 12px 0;
+        button {
+          font-family: "Montserrat";
+          font-weight: 400;
+          font-size: 15px;
+          color: $grey;
+          float: right;
+          margin: 0 0 2px 0;
+        }
+        .nameItem {
+          font-family: "Montserrat";
+          font-weight: 400;
+          font-size: 15px;
+          float: left;
+          width: 100%;
+          margin: 0 0 10px 0;
+        }
+        .priceItem {
+          font-family: "Roboto";
+          font-weight: 400;
+          font-size: 16px;
+          float: left;
+          width: 100%;
+          margin: 0;
+        }
+      }
+    }
+  }
+  .priceText {
+    display: flex;
+    margin: 24px 0;
+    justify-content: space-between;
+    .subtotal {
+      font-family: "Montserrat";
+      font-weight: 400;
+      font-size: 15px;
+      margin: 0;
+    }
+    .totalPrice {
+      font-family: "Montserrat";
+      font-weight: 400;
+      font-size: 15px;
+      margin: 0;
+    }
+  }
+  .buy {
+    font-family: "Montserrat";
+    font-weight: 500;
+    font-size: 18px;
+    border: 1px solid $black;
+    border-radius: 10px;
+    height: 42px;
+    padding: 12px 0;
+  }
+  .keepBuying {
+    font-family: "Montserrat";
+    font-weight: 400;
+    font-size: 15px;
+    color: $grey;
+    margin-top: 24px;
+  }
+}
